@@ -1,0 +1,45 @@
+.formInput {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+}
+
+input {
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+
+label {
+    font-size: 12px;
+    color: gray;
+}
+
+span {
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+    display: none;
+}
+
+input:invalid[focused="true"] {
+    border: 1px solid red;
+    animation: fadein 1s;
+}
+
+input:invalid[focused="true"]~span {
+    display: block;
+    animation: fadein 1s;
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    /*Update because you asked for this numbers BUT i propose from 0 otherwise you are instantly seeing the div. */
+    to {
+        opacity: 1;
+    }
+}
